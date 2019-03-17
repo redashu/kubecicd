@@ -1,0 +1,130 @@
+ 80  docker images
+   81  docker pull nginx 
+   82  docker images
+   83  docker  tag  881bd08c0b08    192.168.10.160:5000/nginx:latest
+   84  docker images 
+   85  docker  push   192.168.10.160:5000/nginx:latest
+   86  bash
+   87  kubectl  get deployments
+   88  kubectl get nodes
+   89  iptables -F
+   90  kubectl get nodes
+   91  systemctl  status kubelet
+   92  systemctl  status docker
+   93  kubectl  get  nodes
+   94  systemctl restart kubelet 
+   95  kubectl  get  nodes
+   96  rm  -rvf  /root/.kube/config 
+   97  cp -v  /etc/kubernetes/admin.conf  /root/.kube/config
+   98  kubectl  get  nodes
+   99  reboot 
+  100  kubectl get nodes
+  101  iptables -F
+  102  systemctl enable kubelet
+  103  kubectl get nodes
+  104  firewalld
+  105  kubectl get nodes
+  106  firewall-cmd --add-port=0-65535 --permanent
+  107  systemctl enable --now firewalld
+  108  scp /etc/kubernetes/admin.conf root@192.168.10.40:~/.kube/
+  109  kubectl get nodes
+  110  cd ~/.kube/
+  111  ls
+  112  vi config 
+  113  systemctl  restart kublet
+  114  systemctl  restart kubelet.service 
+  115  kubectl get nodes
+  116  systemctl disable --now firewalld.service 
+  117  history 
+  118  systemctl enable kubelet
+  119  curl http://172.24.2.12
+  120  docker images
+  121  kubectl get pods bhanudep-84f6594459-v2hss  -o wide
+  122  curl http://172.24.1.46
+  123  kubectl get pods  bhanudep-84f6594459-v2hss 
+  124  kubectl get pods  bhanudep-84f6594459-v2hss  -o wide
+  125  curl http://172.24.1.46
+  126  exit
+  127  kubectl get pods tusharbaba-5d45989446-sntdb  -o wide
+  128  curl http://172.24.2.58
+  129  kubectl  get  nodes
+  130  kubectl  delete all --all
+  131  kubectl  get  deployments
+  132  kubectl  create deployment  ashudep  --image=192.168.10.160:5000/nginx 
+  133  kubectl  get deployments
+  134  history 
+  135  kubectl  delete deployments  ashudep 
+  136  kubectl  create deployment  ashudep  --image=192.168.10.160:5000/nginx 
+  137  kubectl  get  deployments.
+  138  kubectl  get  pods 
+  139  kubectl  get  pods    |   grep  ashudep
+  140  kubectl  get  pods  -o wide  |   grep  ashudep  
+  141  curl  http://172.24.2.26
+  142  kubectl  get  pods  -o wide  |   grep  bha
+  143  curl  http://172.24.2.12
+  144  cd /opt/testimg/
+  145  ls
+  146  cat abc.html 
+  147  cat Dockerfile 
+  148  docker  version
+  149  cat  /etc/docker/daemon.json 
+  150  cat  Dockerfile 
+  151  cat  /etc/docker/daemon.json 
+  152  ls
+  153  pwd
+  154  docker build -t 192.168.10.160:5000/nginx:ashuv1  .
+  155  docker images
+  156  docker push  192.168.10.160:5000/nginx:ashuv1  
+  157  kubectl  get  deployments  ashudep 
+  158  kubectl  describe  deployments  ashudep   |   grep -i image
+  159  kubectl  describe  deployments  ashudep   
+  160  docker images
+  161  kubectl  set  image  deployment/ashudep  ashudep=192.168.10.160:5000/nginx:ashuv1  
+  162  kubectl  get  pods -o wide  |   grep  ashu
+  163  kubectl  describe  pods ashudep-7bb75789b7-c2hf5  |   grep  ashu
+  164  kubectl  get  deployments ashudep  -o wide
+  165  kubectl  set image  deployment/ashudev  nginx=192.168.10.160:5000/nginx:ashuv1
+  166  kubectl  set image  deployment/ashudep  nginx=192.168.10.160:5000/nginx:ashuv1
+  167  kubectl  get  pods   -o wide  |   grep ashu
+  168  curl  http://172.24.1.44/abc.html
+  169  history 
+  170  kubectl  get deployments ashudep 
+  171  kubectl  get deployments ashudep  -o wide
+  172  kubectl  expose deployment  ashudep  --type=LoadBalancer             --port=80 
+  173  kubectl  get svc
+  174  kubectl  describe deployments praveenkum 
+  175  kubectl  get  nodes
+  176  kubectl  get  pods
+  177  cd /opt/testimg/case1
+  178  ls
+  179  cd kubecicd/
+  180  ls
+  181  git status
+  182  git add  .
+  183  git commit -m  "nginx:ashuv2" .
+  184  git push
+  185  history 
+  186  ls
+  187  vim Dockerfile 
+  188  git add .
+  189  git commit -m  "nginx:ashuv3"
+  190  git push 
+  191  ls
+  192  cat Dockerfile 
+  193  pwd
+  194  cd  ../../case2
+  195  ls
+  196  cd  kubecicd/
+  197  ls
+  198  pwd
+  199  git pull 
+  200  ls
+  201  cat Dockerfile 
+  202  ls
+  203  cat Dockerfile 
+  204  docker build  -t  192.168.10.160:5000/nginx:ashuv3  .
+  205  docker push 192.168.10.160:5000/nginx:ashuv3  
+  206  history 
+  207  kubectl  set image deployment/ashudep  nginx=192.168.10.160:5000/nginx:ashuv3
+  208  kubectl get  svc
+
